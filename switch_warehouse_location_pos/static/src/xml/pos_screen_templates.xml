@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--ADDING BUTTON IN POS-->
+<templates id="template" xml:space="preserve">
+    <t t-name="SalesPersonButton">
+        <!-- Check if switch_stock_location is enabled in the POS configuration -->
+        <!-- <t t-if="env.pos.config.switch_stock_location"> -->
+            <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClick()">
+                <i class="fa fa-pencil-square" role="img" aria-label="Products" title="Products" />
+                <span> </span>
+                <span>Switch Stock Location</span>
+            </button>
+        <!-- </t> -->
+    </t>
+</templates>

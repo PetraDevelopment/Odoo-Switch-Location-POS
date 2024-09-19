@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- This record for adding some fields to configuration settings for showing quantity and restricting out-of-stock product -->
+    <record id="res_config_settings_view_form_inherit_custom" model="ir.ui.view">
+        <field name="name">res.config.settings.view.inherit.point_of_sale.custom</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='pos_inventory_section']" position="inside">
+                <!-- New field switch_stock_location added here -->
+                <div class="col-12 col-lg-6">
+                    <field name="is_switch_stock_location"/>
+                    <label for="is_switch_stock_location" string="Switch Stock Location"/>
+                    <div class="text-muted">
+                        Allow switching stock locations for products.
+                    </div>
+                </div>
+                <!-- New field pos_location_id added here -->
+            </xpath>
+        </field>
+    </record>
+</odoo>
