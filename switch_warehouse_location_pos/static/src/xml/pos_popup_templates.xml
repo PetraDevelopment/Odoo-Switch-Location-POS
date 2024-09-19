@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    Add a popup window-->
+<templates id="template" xml:space="preserve">
+   <t t-name="SalesPersonPopup" owl="1">
+      <div class="popup product-line-popup">
+         <main class="body">
+            <div>
+               <header>
+                  <h3>
+                     <span>Choose Stock Location</span>
+                      <i class="fa fa-times" style="float:right"
+                         t-on-click="cancel"/>
+                      <hr/>
+                  </h3>
+                   <div class="product-img-create-popup">
+                     <img t-att-src="imageUrl" id="img_url_tag_create"/>
+                  </div>
+                   <select t-ref="locationRef" class="location_select form-control"
+                           style="width:100%; height:60px; font-size:20px; padding:10px; border-radius:10px; margin-top:10px;">
+                            <t t-log="props.locations"/>
+                            <t t-foreach="props.location_id || []" t-as="location" t-key="location.id">
+                                <t t-log="location"/>
+                                <option t-att-value="location.name" t-att-id="location.id">
+                                    <t t-esc="location.location_id[1]" />
+                                    <t t-esc="location.name" />
+                                </option>
+                            </t>
+                   </select>
+               </header>
+            </div>
+         </main>
+          <footer class="footer cash-move">
+            <div class="button confirm disable highlight" t-on-click="confirm">
+                            Switch
+                        </div>
+              <div class="button cancel" t-on-click="cancel">
+                    Cancel
+            </div>
+         </footer>
+      </div>
+   </t>
+</templates>
